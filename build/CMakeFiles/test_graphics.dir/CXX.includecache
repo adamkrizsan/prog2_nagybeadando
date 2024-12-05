@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adam/Documents/prog2_nagybeadando/graphics.hpp
+string
+-
+vector
+-
+map
+-
+
+/home/adam/Documents/prog2_nagybeadando/main.cpp
+graphics.hpp
+/home/adam/Documents/prog2_nagybeadando/graphics.hpp
+iostream
+-
+sstream
+-
+cstdlib
+-
+vector
+-
+cmath
+-
+thread
+-
+

@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adam/Documents/prog2_nagybeadando/char2.h
+
+/home/adam/Documents/prog2_nagybeadando/graphics.cpp
+graphics.hpp
+/home/adam/Documents/prog2_nagybeadando/graphics.hpp
+SDL2/SDL.h
+-
+SDL2/SDL_ttf.h
+-
+cstdlib
+-
+algorithm
+-
+map
+-
+iostream
+-
+char2.h
+/home/adam/Documents/prog2_nagybeadando/char2.h
+keytbl.h
+/home/adam/Documents/prog2_nagybeadando/keytbl.h
+
+/home/adam/Documents/prog2_nagybeadando/graphics.hpp
+string
+-
+vector
+-
+map
+-
+
+/home/adam/Documents/prog2_nagybeadando/keytbl.h
+

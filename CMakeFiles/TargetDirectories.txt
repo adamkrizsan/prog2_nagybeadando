@@ -1,0 +1,5 @@
+/home/adam/Documents/prog2_nagybeadando/CMakeFiles/rebuild_cache.dir
+/home/adam/Documents/prog2_nagybeadando/CMakeFiles/edit_cache.dir
+/home/adam/Documents/prog2_nagybeadando/CMakeFiles/helloworld.dir
+/home/adam/Documents/prog2_nagybeadando/CMakeFiles/test_graphics.dir
+/home/adam/Documents/prog2_nagybeadando/CMakeFiles/graphics.dir
