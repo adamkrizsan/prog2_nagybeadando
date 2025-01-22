@@ -20,7 +20,7 @@ struct Table
 {
     vector<vector<vector<Tile>>> routes;
     vector<vector<Tile>> v;
-    vector<int> choices;
+    vector<int> tileset;
     vector<vector<bool>> options;
     // set<vector<vector<Tile>>> poss;
 
@@ -34,7 +34,8 @@ struct Table
     Tile get_source();
     Tile get_drain();
     Tile choice_to_tile(int i);
-    vector<Table> find_routes();
+    vector<Table> find_routes(pair<int, int> current);
+    pair<int, int> get_free_ends();
 };
 
 #endif

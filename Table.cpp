@@ -35,7 +35,7 @@ Table::Table(int XX, int YY, int res, int border_width)
 
     for (size_t i = 0; i < options.size() - 2; i++)
     {
-        choices.push_back(0);
+        tileset.push_back(0);
     }
 
     for (int i = 0; i < options.size(); i++)
@@ -75,22 +75,22 @@ void Table::rajzol()
 
 void Table::add_tile(int i)
 {
-    choices[i]++;
+    tileset[i]++;
 }
 void Table::sub_tile(int i)
 {
-    choices[i]--;
-    if (choices[i] < 0)
+    tileset[i]--;
+    if (tileset[i] < 0)
     {
-        choices[i] = 0;
+        tileset[i] = 0;
     }
 }
 
 void Table::draw_choices(int YY)
 {
-    for (int i = 0; i < choices.size(); i++)
+    for (int i = 0; i < tileset.size(); i++)
     {
-        string s = "x" + to_string(choices[i]);
+        string s = "x" + to_string(tileset[i]);
         gout << move_to(150, 10 + i * YY / 7) << color(70, 70, 70) << box(70, 70) << genv::move(-35, -35) << color(150, 150, 150) << text(s) << refresh;
     }
 }
@@ -177,14 +177,17 @@ Tile Table::choice_to_tile(int i)
     return t;
 }
 
-vector<Table> Table::find_routes()
+vector<Table> Table::find_routes(pair<int, int> current)
 {
     vector<Table> routes;
     Tile s = get_source();
     Tile d = get_drain();
-    vector<int> tileset = choices;
-    Tile most = s;
+    Tile most;
+    most = v[current.first][current.second];
+    most.x = current.first;
+    most.y = current.second;
     Tile target = d;
+    vector<int> tilesetbuffer = tileset;
 
     int j = 0;
 
@@ -204,12 +207,11 @@ vector<Table> Table::find_routes()
 
         for (size_t k = 0; k < tileset.size(); k++)
         {
-
             if (tileset[k] != 0)
             {
                 proba = choice_to_tile(k);
-                proba.x = most.x + i;
-                proba.y = most.y + j;
+                proba.x = most.x + j;
+                proba.y = most.y + i;
 
                 for (int l = 0; l < 4; l++)
                 {
@@ -227,6 +229,7 @@ vector<Table> Table::find_routes()
             }
         }
     }
+    tileset = tilesetbuffer;
     int i = 0;
     for (j = -1; j < 2; j++)
     {
@@ -245,8 +248,8 @@ vector<Table> Table::find_routes()
             if (tileset[k] != 0)
             {
                 proba = choice_to_tile(k);
-                proba.x = most.x + i;
-                proba.y = most.y + j;
+                proba.x = most.x + j;
+                proba.y = most.y + i;
 
                 for (int l = 0; l < 4; l++)
                 {
@@ -261,8 +264,56 @@ vector<Table> Table::find_routes()
                 }
                 if (tileset[k] > 0)
                     tileset[k]--;
-            }
+            } // ELFOGY A TILEset k
         }
     }
     return routes;
+}
+
+pair<int, int> Table::get_free_ends() // get_free_end would be more comprehensive (since the 0 multi end support)
+{
+    Tile free;
+    for (size_t i = 0; i < v.size(); i++)
+    {
+        for (size_t j = 0; j < v[0].size(); j++)
+        {
+            v[i][j].x = i;
+            v[i][j].y = j;
+            if (v[i][j].u || v[i][j].d || v[i][j].l || v[i][j].r)
+            {
+                if (v[i][j].u && v[i][j].x - 1 != -1)
+                {
+                    if (!v[i - 1][j].d)
+                    {
+                        pair<int, int> p(i, j);
+                        return p;
+                    }
+                }
+                if (v[i][j].d && v[i][j].x + 1 != v[0].size())
+                {
+                    if (!v[i + 1][j].u)
+                    {
+                        pair<int, int> p(i, j);
+                        return p;
+                    }
+                }
+                if (v[i][j].l && v[i][j].y - 1 != -1)
+                {
+                    if (!v[i][j - 1].r)
+                    {
+                        pair<int, int> p(i, j);
+                        return p;
+                    }
+                }
+                if (v[i][j].r && v[i][j].y + 1 != v.size())
+                {
+                    if (!v[i][j + 1].l)
+                    {
+                        pair<int, int> p(i, j);
+                        return p;
+                    }
+                }
+            }
+        }
+    }
 }

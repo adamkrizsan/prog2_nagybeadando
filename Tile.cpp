@@ -94,28 +94,28 @@ bool Tile::is_legal(int xe, int ye)
 {
     if (x == 0)
     {
-        if (l)
+        if (u)
         {
             return false;
         }
     }
     if (y == 0)
     {
-        if (u)
+        if (l)
         {
             return false;
         }
     }
     if (x == xe - 1)
     {
-        if (r)
+        if (d)
         {
             return false;
         }
     }
     if (y == ye - 1)
     {
-        if (d)
+        if (r)
         {
             return false;
         }
@@ -127,28 +127,28 @@ bool Tile::does_match(Tile uj)
 {
     if (x < uj.x)
     {
-        if (r and uj.l)
+        if (d and uj.u)
         {
             return true;
         }
     }
     if (uj.x < x)
     {
-        if (uj.r and l)
+        if (uj.d and u)
         {
             return true;
         }
     }
     if (y < uj.y)
     {
-        if (d and uj.u)
+        if (r and uj.l)
         {
             return true;
         }
     }
     if (uj.y < y)
     {
-        if (uj.d and u)
+        if (uj.r and l)
         {
             return true;
         }

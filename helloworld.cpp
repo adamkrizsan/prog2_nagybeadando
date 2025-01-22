@@ -26,11 +26,18 @@ int main()
 
     Table t(XX, YY, res, border_width);
 
-    t.v[1][1] = t.choice_to_tile(4);
-    // t.v[1][1].rotate(2);
-    t.v[1][1].source = true;
+    t.v[0][0] = t.choice_to_tile(0);
+    t.v[0][0].rotate(2);
+    t.v[0][0].source = true;
     t.v[2][3] = t.choice_to_tile(0);
     t.v[2][3].drain = true;
+    // t.v[0][1] = t.choice_to_tile(2);
+    // t.v[0][2] = t.choice_to_tile(1);
+    // t.v[0][2].rotate(3);
+    // t.v[1][2] = t.choice_to_tile(2);
+    // t.v[1][2].rotate(1);
+    // Tile asd = t.get_free_ends();
+
     t.rajzol();
     t.draw_choices(YY);
 
@@ -86,13 +93,20 @@ int main()
         {
             if (ev.keycode == key_enter)
             {
-                temp = t.find_routes();
+
+                pair<int, int> sourcecoords;
+                sourcecoords.first = t.get_source().x;
+                sourcecoords.second = t.get_source().y;
+                temp = t.find_routes(sourcecoords);
                 tables.insert(tables.end(), temp.begin(), temp.end());
-                for (Table t : tables)
-                {
-                    t.rajzol();
-                    usleep(500000);
-                }
+                t.rajzol();
+
+                t = tables[0];
+                pair<int, int> asd = t.get_free_ends();
+                cout << asd.first << " " << asd.second << endl;
+                temp = t.find_routes(asd); // func that finds open ends and returns the relevant tile (no multi end support)
+                tables.insert(tables.end(), temp.begin(), temp.end());
+                t.rajzol();
             }
         }
     }
