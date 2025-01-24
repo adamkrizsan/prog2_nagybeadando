@@ -49,14 +49,14 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -fPIE  "
+					"fragment" : "-g -fPIE"
 				}
 			],
 			"includes" : 
 			[
 				{
 					"backtrace" : 3,
-					"path" : "/home/adam/Documents/prog2_nagybeadando/include"
+					"path" : "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/include"
 				}
 			],
 			"language" : "CXX",
@@ -89,10 +89,12 @@
 				"role" : "flags"
 			},
 			{
+				"backtrace" : 1,
 				"fragment" : "-lSDL2",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 1,
 				"fragment" : "-lSDL2_ttf",
 				"role" : "libraries"
 			},
@@ -102,10 +104,12 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 1,
 				"fragment" : "-lSDL2",
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 1,
 				"fragment" : "-lSDL2_ttf",
 				"role" : "libraries"
 			}

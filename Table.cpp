@@ -5,9 +5,9 @@
 using namespace std;
 using namespace genv;
 
-Table::Table(int XX, int YY, int res, int border_width)
+Table::Table(int gridx, int gridy, int YY, int res, int border_width)
 {
-    for (int i = 0; i < YY / res; i++)
+    for (int i = 0; i < gridy; i++)
     {
         Tile t;
 
@@ -17,7 +17,7 @@ Table::Table(int XX, int YY, int res, int border_width)
         t.d = false;
         t.source = false;
         t.drain = false;
-        vector<Tile> tmp(XX / res, t);
+        vector<Tile> tmp(gridx, t);
         v.push_back(tmp);
     }
 
@@ -50,7 +50,7 @@ Table::Table(int XX, int YY, int res, int border_width)
             t.source = options[i][4];
             t.drain = options[i][5];
 
-            gout << move_to(10, 10 + i * YY / 7);
+            gout << move_to(10, 10 + i * YY/7);
             t.draw_tile(100, border_width, 20);
         }
     }
@@ -58,7 +58,7 @@ Table::Table(int XX, int YY, int res, int border_width)
 
 void Table::rajzol()
 {
-    const int res = 250; //>100
+    const int res = 150; //>100
     const int border_width = 5;
     const int pipe_width = res / 5;
     for (size_t j = 0; j < v.size(); j++)
@@ -215,17 +215,18 @@ vector<Table> Table::find_routes(pair<int, int> current)
 
                 for (int l = 0; l < 4; l++)
                 {
-
+                    //TODO: ha tobb szabad veg is van mindegyikre kell tenni valamit(elagazas, howmany())
                     if (most.does_match(proba) && proba.is_legal(v[0].size(), v.size()))
                     {
                         v[most.x + j][most.y + i] = proba;
-
+                        if (tileset[k] > 0)
+                        tileset[k]--;
                         routes.push_back(*this);
+                        tileset = tilesetbuffer;
                     }
                     proba.rotate(1);
                 }
-                if (tileset[k] > 0)
-                    tileset[k]--;
+                
             }
         }
     }
@@ -257,13 +258,13 @@ vector<Table> Table::find_routes(pair<int, int> current)
                     if (most.does_match(proba) && proba.is_legal(v[0].size(), v.size()))
                     {
                         v[most.x + j][most.y + i] = proba;
-
+                        if (tileset[k] > 0)
+                        tileset[k]--;
                         routes.push_back(*this);
+                        tileset = tilesetbuffer;
                     }
                     proba.rotate(1);
                 }
-                if (tileset[k] > 0)
-                    tileset[k]--;
             } // ELFOGY A TILEset k
         }
     }
@@ -272,7 +273,7 @@ vector<Table> Table::find_routes(pair<int, int> current)
 
 pair<int, int> Table::get_free_ends() // get_free_end would be more comprehensive (since the 0 multi end support)
 {
-    Tile free;
+    
     for (size_t i = 0; i < v.size(); i++)
     {
         for (size_t j = 0; j < v[0].size(); j++)
@@ -316,4 +317,5 @@ pair<int, int> Table::get_free_ends() // get_free_end would be more comprehensiv
             }
         }
     }
+    return pair<int, int>(-1, -1);
 }

@@ -10,7 +10,9 @@ using namespace std;
 
 const int XX = 1000;
 const int YY = 750;
-const int res = 250; //>100
+const int res = 50; //>100
+const int gridx = 3;
+const int gridy = 3;
 const int border_width = 5;
 const int pipe_width = res / 5;
 vector<Table> tables;
@@ -23,14 +25,38 @@ int main()
     event ev;
     gin.timer(100);
     gout << color(70, 70, 70) << move_to(0, 0) << box(XX + 300, YY) << move_to(0, 0);
+    
+    Table t(gridx, gridy, YY, res, border_width);
 
-    Table t(XX, YY, res, border_width);
+    //elagazas feladat
 
-    t.v[0][0] = t.choice_to_tile(0);
-    t.v[0][0].rotate(2);
-    t.v[0][0].source = true;
-    t.v[2][3] = t.choice_to_tile(0);
-    t.v[2][3].drain = true;
+    // t.v[0][0] = t.choice_to_tile(0);
+    // t.v[0][0].rotate(2);
+    // t.v[0][0].source = true;
+    // t.v[0][2] = t.choice_to_tile(0);
+    // t.v[0][2].drain = true;
+    // t.v[1][1] = t.choice_to_tile(0);
+    // t.v[1][1].rotate(1);
+    // t.v[1][1].drain = true;
+
+    //kanyar feladat
+
+    // t.v[0][0] = t.choice_to_tile(0);
+    // t.v[0][0].rotate(2);
+    // t.v[0][0].source = true;
+    // t.v[1][2] = t.choice_to_tile(0);
+    // t.v[1][2].drain = true;
+
+    //nagy kanyar feladat
+
+    // t.v[0][0] = t.choice_to_tile(0);
+    // t.v[0][0].rotate(2);
+    // t.v[0][0].source = true;
+    // t.v[2][2] = t.choice_to_tile(0);
+    // t.v[2][2].drain = true;
+    
+
+
     // t.v[0][1] = t.choice_to_tile(2);
     // t.v[0][2] = t.choice_to_tile(1);
     // t.v[0][2].rotate(3);
@@ -38,8 +64,32 @@ int main()
     // t.v[1][2].rotate(1);
     // Tile asd = t.get_free_ends();
 
+    //parallel 2 feladat
+
+    // t.v[0][1] = t.choice_to_tile(1);
+    // t.v[0][1].rotate(3);
+    // t.v[0][1].source = true;
+    // t.v[1][0] = t.choice_to_tile(1);
+    // t.v[1][0].rotate(1);
+    // t.v[1][0].drain = true;
+
+    //tobb forras feladat
+
+    t.v[0][0] = t.choice_to_tile(0);
+    t.v[0][0].rotate(2);
+    t.v[0][0].source = true;
+    t.v[0][2] = t.choice_to_tile(0);
+    //t.v[0][2].rotate(2);
+    t.v[0][2].source = true;
+    t.v[2][2] = t.choice_to_tile(0);
+    //t.v[2][2].rotate(2);
+    t.v[2][2].drain = true;
+
+
+
     t.rajzol();
     t.draw_choices(YY);
+    gout << refresh;
 
     while (gin >> ev && ev.keycode != key_escape)
     {
@@ -63,22 +113,8 @@ int main()
                     t.sub_tile(i);
                     t.draw_choices(YY);
                 }
-                if (x > 5 && x < 100 && y > 550)
-                {
-                    int a = y / 110;
-                    // cout << i << endl;
-                    t.set_selected(a);
-                    t.rajzol();
-                }
-                if (x > 300)
-                {
-                    int i = (x - 300) / res;
-                    int j = y / res;
-                    t.v[j][i].is_selected = !t.v[j][i].is_selected;
-                    gout << move_to(i * res + border_width + 300, j * res + border_width);
-                    t.v[j][i].draw_tile(res, border_width, pipe_width);
-                    gout << refresh;
-                }
+                
+                
             }
         }
         if (ev.type == ev_key)
@@ -93,20 +129,39 @@ int main()
         {
             if (ev.keycode == key_enter)
             {
-
+                
                 pair<int, int> sourcecoords;
                 sourcecoords.first = t.get_source().x;
                 sourcecoords.second = t.get_source().y;
                 temp = t.find_routes(sourcecoords);
                 tables.insert(tables.end(), temp.begin(), temp.end());
-                t.rajzol();
+                
+                int tilesetsum;
+                for (size_t i = 0; i < t.tileset.size(); i++)
+                {
+                    tilesetsum += t.tileset[i];
+                }
+                
 
-                t = tables[0];
-                pair<int, int> asd = t.get_free_ends();
-                cout << asd.first << " " << asd.second << endl;
-                temp = t.find_routes(asd); // func that finds open ends and returns the relevant tile (no multi end support)
-                tables.insert(tables.end(), temp.begin(), temp.end());
-                t.rajzol();
+                for (size_t i = 0; i < tilesetsum -1; i++)
+                {
+                    t = tables[i];
+                    pair<int, int> asd = t.get_free_ends();
+                    temp = t.find_routes(asd);
+                    tables.insert(tables.end(), temp.begin(), temp.end());
+                    t = tables[2];
+                    t.rajzol();
+                }
+                
+                
+                
+                // t = tables[tables.size() - 1];
+                // asd = t.get_free_ends();
+                // temp = t.find_routes(asd);
+                // tables.insert(tables.end(), temp.begin(), temp.end());
+                // t.rajzol();
+
+                
             }
         }
     }

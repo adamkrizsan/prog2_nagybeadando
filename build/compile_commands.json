@@ -1,27 +1,32 @@
 [
 {
-  "directory": "/home/adam/Documents/prog2_nagybeadando/build",
-  "command": "/usr/bin/g++   -I/home/adam/Documents/prog2_nagybeadando/include  -g -fPIE   -o CMakeFiles/helloworld.dir/helloworld.cpp.o -c /home/adam/Documents/prog2_nagybeadando/helloworld.cpp",
-  "file": "/home/adam/Documents/prog2_nagybeadando/helloworld.cpp"
+  "directory": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build",
+  "command": "/usr/bin/c++  -I/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/include -g -fPIC -o CMakeFiles/graphics.dir/graphics.cpp.o -c /home/adam-krizsan/Documents/prog2/prog2_nagybeadando/graphics.cpp",
+  "file": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/graphics.cpp",
+  "output": "CMakeFiles/graphics.dir/graphics.cpp.o"
 },
 {
-  "directory": "/home/adam/Documents/prog2_nagybeadando/build",
-  "command": "/usr/bin/g++   -I/home/adam/Documents/prog2_nagybeadando/include  -g -fPIE   -o CMakeFiles/helloworld.dir/Table.cpp.o -c /home/adam/Documents/prog2_nagybeadando/Table.cpp",
-  "file": "/home/adam/Documents/prog2_nagybeadando/Table.cpp"
+  "directory": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build",
+  "command": "/usr/bin/c++  -I/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/include -g -fPIE -o CMakeFiles/test_graphics.dir/main.cpp.o -c /home/adam-krizsan/Documents/prog2/prog2_nagybeadando/main.cpp",
+  "file": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/main.cpp",
+  "output": "CMakeFiles/test_graphics.dir/main.cpp.o"
 },
 {
-  "directory": "/home/adam/Documents/prog2_nagybeadando/build",
-  "command": "/usr/bin/g++   -I/home/adam/Documents/prog2_nagybeadando/include  -g -fPIE   -o CMakeFiles/helloworld.dir/Tile.cpp.o -c /home/adam/Documents/prog2_nagybeadando/Tile.cpp",
-  "file": "/home/adam/Documents/prog2_nagybeadando/Tile.cpp"
+  "directory": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build",
+  "command": "/usr/bin/c++  -I/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/include -g -fPIE -o CMakeFiles/helloworld.dir/helloworld.cpp.o -c /home/adam-krizsan/Documents/prog2/prog2_nagybeadando/helloworld.cpp",
+  "file": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/helloworld.cpp",
+  "output": "CMakeFiles/helloworld.dir/helloworld.cpp.o"
 },
 {
-  "directory": "/home/adam/Documents/prog2_nagybeadando/build",
-  "command": "/usr/bin/g++   -I/home/adam/Documents/prog2_nagybeadando/include  -g -fPIE   -o CMakeFiles/test_graphics.dir/main.cpp.o -c /home/adam/Documents/prog2_nagybeadando/main.cpp",
-  "file": "/home/adam/Documents/prog2_nagybeadando/main.cpp"
+  "directory": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build",
+  "command": "/usr/bin/c++  -I/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/include -g -fPIE -o CMakeFiles/helloworld.dir/Table.cpp.o -c /home/adam-krizsan/Documents/prog2/prog2_nagybeadando/Table.cpp",
+  "file": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/Table.cpp",
+  "output": "CMakeFiles/helloworld.dir/Table.cpp.o"
 },
 {
-  "directory": "/home/adam/Documents/prog2_nagybeadando/build",
-  "command": "/usr/bin/g++   -I/home/adam/Documents/prog2_nagybeadando/include  -g -fPIC   -o CMakeFiles/graphics.dir/graphics.cpp.o -c /home/adam/Documents/prog2_nagybeadando/graphics.cpp",
-  "file": "/home/adam/Documents/prog2_nagybeadando/graphics.cpp"
+  "directory": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build",
+  "command": "/usr/bin/c++  -I/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/include -g -fPIE -o CMakeFiles/helloworld.dir/Tile.cpp.o -c /home/adam-krizsan/Documents/prog2/prog2_nagybeadando/Tile.cpp",
+  "file": "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/Tile.cpp",
+  "output": "CMakeFiles/helloworld.dir/Tile.cpp.o"
 }
 ]

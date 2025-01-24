@@ -6,6 +6,7 @@
 			[
 				{
 					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.11"
@@ -42,21 +43,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "graphics::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-graphics-Debug-107cc0f3a778e5c72f9d.json",
+					"jsonFile" : "target-graphics-Debug-8e64ca7cd76d00330dce.json",
 					"name" : "graphics",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "helloworld::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-helloworld-Debug-b02c45fbec5c8c38a44b.json",
+					"jsonFile" : "target-helloworld-Debug-8ee472cd984a6596cf72.json",
 					"name" : "helloworld",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "test_graphics::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-test_graphics-Debug-261a784afbc21e90d839.json",
+					"jsonFile" : "target-test_graphics-Debug-730d565ee9212d572e30.json",
 					"name" : "test_graphics",
 					"projectIndex" : 0
 				}
@@ -66,12 +67,12 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "/home/adam/Documents/prog2_nagybeadando/build",
-		"source" : "/home/adam/Documents/prog2_nagybeadando"
+		"build" : "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build",
+		"source" : "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando"
 	},
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 0
+		"minor" : 6
 	}
 }

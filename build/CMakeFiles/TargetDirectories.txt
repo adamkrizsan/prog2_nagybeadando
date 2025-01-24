@@ -1,5 +1,5 @@
-/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/rebuild_cache.dir
-/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/edit_cache.dir
-/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/helloworld.dir
-/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/test_graphics.dir
-/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/graphics.dir
+/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build/CMakeFiles/graphics.dir
+/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build/CMakeFiles/test_graphics.dir
+/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build/CMakeFiles/helloworld.dir
+/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build/CMakeFiles/edit_cache.dir
+/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/build/CMakeFiles/rebuild_cache.dir

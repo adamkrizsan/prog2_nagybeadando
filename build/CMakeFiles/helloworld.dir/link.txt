@@ -1,1 +1,1 @@
-/usr/bin/g++  -g   CMakeFiles/helloworld.dir/helloworld.cpp.o CMakeFiles/helloworld.dir/Table.cpp.o CMakeFiles/helloworld.dir/Tile.cpp.o  -o helloworld  -lSDL2 -lSDL2_ttf libgraphics.a -lSDL2 -lSDL2_ttf 
+/usr/bin/c++ -g CMakeFiles/helloworld.dir/helloworld.cpp.o CMakeFiles/helloworld.dir/Table.cpp.o CMakeFiles/helloworld.dir/Tile.cpp.o -o helloworld  -lSDL2 -lSDL2_ttf libgraphics.a -lSDL2 -lSDL2_ttf 

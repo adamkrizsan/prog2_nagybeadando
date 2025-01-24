@@ -1,23 +1,24 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "CXX"
-  )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/adam/Documents/prog2_nagybeadando/Table.cpp" "/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/helloworld.dir/Table.cpp.o"
-  "/home/adam/Documents/prog2_nagybeadando/Tile.cpp" "/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/helloworld.dir/Tile.cpp.o"
-  "/home/adam/Documents/prog2_nagybeadando/helloworld.cpp" "/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/helloworld.dir/helloworld.cpp.o"
-  )
-set(CMAKE_CXX_COMPILER_ID "GNU")
-
-# The include file search paths:
-set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "../include"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/adam/Documents/prog2_nagybeadando/build/CMakeFiles/graphics.dir/DependInfo.cmake"
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/Table.cpp" "CMakeFiles/helloworld.dir/Table.cpp.o" "gcc" "CMakeFiles/helloworld.dir/Table.cpp.o.d"
+  "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/Tile.cpp" "CMakeFiles/helloworld.dir/Tile.cpp.o" "gcc" "CMakeFiles/helloworld.dir/Tile.cpp.o.d"
+  "/home/adam-krizsan/Documents/prog2/prog2_nagybeadando/helloworld.cpp" "CMakeFiles/helloworld.dir/helloworld.cpp.o" "gcc" "CMakeFiles/helloworld.dir/helloworld.cpp.o.d"
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

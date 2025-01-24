@@ -24,7 +24,7 @@ struct Table
     vector<vector<bool>> options;
     // set<vector<vector<Tile>>> poss;
 
-    Table(int XX, int YY, int res, int border_width);
+    Table(int gridx, int gridy, int YY, int res, int border_width);
     void rajzol();
     void add_tile(int i);
     void sub_tile(int i);
